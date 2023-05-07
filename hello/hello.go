@@ -21,23 +21,11 @@ func main() {
     log.SetFlags(log.Llongfile)
 	 
 	fmt.Println(getGreetingMessage("Thomas"));
-	fmt.Println(getGoodbyeMessage("Manfred"));
 }
 
 
 func getGreetingMessage(name string) (string) {
 	message, err := greetings.Hello(name);
-
-    if (err != nil) {
-        log.Fatal(err);
-    }
-
-
-	return message;
-}
-
-func getGoodbyeMessage(name string) (string) {
-	message, err := greetings.Bye(name);
 
     if (err != nil) {
         log.Fatal(err);
