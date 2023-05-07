@@ -8,21 +8,27 @@ import (
 	"rsc.io/quote"
 )
 
+type Person struct {
+	name string;
+}
+
 func main() {
 
 	message := "World";
 	fmt.Printf("Hello, %v.\n", message);
 	fmt.Println(quote.Go());
 
-	// Set properties of the predefined Logger, including
-    // the log entry prefix and a flag to disable printing
-    // the time, source file, and line number.
     log.SetPrefix("greetings: ")
     log.SetFlags(log.Llongfile)
-	 
-	fmt.Println(getGreetingMessage("Thomas"));
 
-	names := []string{"Gladys", "Samantha", "Darrin"}
+	person1:= Person{"Thomas"};
+	person2:= Person{"Torben"};
+	person3:= Person{"Janis"};
+	person4:= Person{"Alfred"};
+	 
+	fmt.Println(getGreetingMessage(person1.name));
+
+	names := []string{person2.name, person3.name, person4.name}
 
 	messages, err := greetings.Hellos(names)
 	if err != nil {
